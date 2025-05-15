@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual GitHub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .tabs {
+      display: flex;
+      background-color: #333;
+    }
+    .tabs button {
+      background-color: inherit;
+      border: none;
+      outline: none;
+      padding: 14px 20px;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+    .tabs button:hover {
+      background-color: #575757;
+    }
+    .tabs button.active {
+      background-color: #007acc;
+    }
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tablink active" onclick="openTab(event, 'conta')">Criar Conta</button>
+  <button class="tablink" onclick="openTab(event, 'senha')">Esqueceu a Senha</button>
+  <button class="tablink" onclick="openTab(event, 'repositorio')">Criar Repositório</button>
+  <button class="tablink" onclick="openTab(event, 'editar')">Alterar/Excluir Repositório</button>
+  <button class="tablink" onclick="openTab(event, 'site')">Publicar Site</button>
+  <button class="tablink" onclick="openTab(event, 'link')">Adicionar Link</button>
+</div>
+
+<div id="conta" class="tab-content active">
+  <h2>Criar Conta no GitHub</h2>
+  <p>1. Acesse <a href="https://github.com">https://github.com</a><br>
+     2. Clique em <strong>Sign up</strong><br>
+     3. Preencha as informações e confirme por e-mail.</p>
+  <img src="https://i.imgur.com/I5XbGuu.png" alt="Criar conta GitHub">
+</div>
+
+<div id="senha" class="tab-content">
+  <h2>Recuperar Senha</h2>
+  <p>1. Acesse <a href="https://github.com/login">https://github.com/login</a><br>
+     2. Clique em <strong>Forgot password?</strong><br>
+     3. Siga o processo por e-mail.</p>
+  <img src="https://i.imgur.com/o4jE1Io.png" alt="Recuperar senha GitHub">
+</div>
+
+<div id="repositorio" class="tab-content">
+  <h2>Criar Repositório</h2>
+  <p>1. Após login, clique em <strong>New</strong><br>
+     2. Preencha as informações e clique em <strong>Create repository</strong></p>
+  <img src="https://i.imgur.com/Fk3ZseH.png" alt="Criar repositório GitHub">
+</div>
+
+<div id="editar" class="tab-content">
+  <h2>Alterar ou Excluir Repositório</h2>
+  <p><strong>Alterar:</strong> Vá em <em>Settings</em> → Edite o nome.<br>
+     <strong>Excluir:</strong> Role até o fim e clique em <em>Delete this repository</em>.</p>
+  <img src="https://i.imgur.com/YfU9POz.png" alt="Alterar ou excluir repositório GitHub">
+</div>
+
+<div id="site" class="tab-content">
+  <h2>Publicar Site (GitHub Pages)</h2>
+  <p>1. Vá em <strong>Settings</strong> → <em>Pages</em><br>
+     2. Escolha a branch e pasta<br>
+     3. Clique em <strong>Save</strong></p>
+  <img src="https://i.imgur.com/CGNuyJf.png" alt="Publicar site no GitHub Pages">
+</div>
+
+<div id="link" class="tab-content">
+  <h2>Adicionar Link do Site ao Repositório</h2>
+  <p>1. Vá na página do repositório<br>
+     2. Clique na engrenagem ao lado da descrição<br>
+     3. Cole o link do site e salve</p>
+  <img src="https://i.imgur.com/6efIZtC.png" alt="Adicionar link do site">
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    const tabContents = document.querySelectorAll(".tab-content");
+    const tabLinks = document.querySelectorAll(".tablink");
+
+    tabContents.forEach(tab => tab.classList.remove("active"));
+    tabLinks.forEach(link => link.classList.remove("active"));
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
